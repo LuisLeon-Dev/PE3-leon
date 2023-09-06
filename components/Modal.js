@@ -13,14 +13,16 @@ const Modal = ({ modalVisible, onHandleDelete }) => {
     <NewModal visible={modalVisible} animationType="slide" transparent={true}>
       <View style={styles.modalContainer}>
         <View style={styles.modalContent}>
-          <View style={styles.modalTitle}>
-            <Text>Mi Modal</Text>
+          <View>
+            <Text style={styles.modalTitle}>Delete!</Text>
           </View>
-          <View style={styles.modalMessage}>
-            <Text>Estas seguro de eliminar este elemnto?</Text>
+          <View>
+            <Text style={styles.modalMessage}>
+              Are you sure you want to delete the item?
+            </Text>
           </View>
           <View style={styles.modalButton}>
-            <Button title="confirmar" onPress={onHandleDelete} />
+            <Button title="Confirm" color={"#fff"} onPress={onHandleDelete} />
           </View>
         </View>
       </View>
@@ -37,27 +39,33 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   modalContent: {
-    backgroundColor: "red",
+    backgroundColor: "#fff",
+    color: "#fff",
     borderRadius: 20,
-    padding: 35,
+    padding: 30,
     alignItems: "center",
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.2,
+    shadowOffset: { width: 3, height: 3 },
+    shadowOpacity: 0.7,
     shadowRadius: 3,
     elevation: 5,
   },
   modalTitle: {
-    backgroundColor: "#ccc",
-    color: "#fff",
-    fontSize: 18,
+    fontSize: 24,
+    fontWeight: "800",
   },
   modalMessage: {
     marginBottom: 15,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 15,
+    fontSize: 16,
   },
   modalButton: {
+    backgroundColor: "#10CD19",
+    color: "#fff",
+    paddingHorizontal: 15,
+    borderRadius: 8,
     marginTop: 15,
   },
 });

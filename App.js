@@ -23,7 +23,7 @@ export default function App() {
     if (textValue === "") {
       return;
     }
-    console.log("ejecuta la funcion de agregar elemnto");
+    console.log("agrega elemento correctamente!");
     setItemsList((prevState) => [
       ...prevState,
       { id: Math.random(), value: textValue },
@@ -59,11 +59,13 @@ export default function App() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="New Item"
+          placeholder="Add New Item"
           value={textValue}
           onChangeText={onHandleChangeItem}
         />
-        <Button title="+ ADD" color={"#000"} onPress={addItem} />
+        <View style={styles.button}>
+          <Button title="+" color={"#000"} onPress={addItem} />
+        </View>
       </View>
       <View style={styles.listContainer}>
         <FlatList
@@ -82,12 +84,13 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
     paddingTop: 80,
-    backgroundColor: "#e2c6ab",
+    backgroundColor: "#3A3E7A",
   },
   title: {
     fontSize: 35,
-    fontWeight: "500",
+    fontWeight: "800",
     marginBottom: 25,
+    color: "#fff",
   },
   inputContainer: {
     borderRadius: 10,
@@ -124,5 +127,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "600",
     fontVariant: "no-common-ligatures",
+  },
+  button: {
+    marginRight: 10,
+    paddingHorizontal: 10,
+    backgroundColor: "#ffee00",
+    borderRadius: 5,
   },
 });
